@@ -35,8 +35,9 @@ public class TicketMachine
     {
         return price;
     }
-    public void setPrice(int cost){
-        price = cost;
+    public void setPrice(int price){
+        /** set your price */
+        this.price = price;
     }
 
     /**
@@ -66,9 +67,10 @@ public class TicketMachine
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicket()
-    {
+    public void printTicket(int ticketamount)
+    {   for (int i = 0; i < ticketamount; i++) {
         if(balance >= price) {
+            
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -86,6 +88,7 @@ public class TicketMachine
             System.out.printf("You must insert at least %d more cents.%n",
                               price - balance);
         }
+    }
     }
 
     /**

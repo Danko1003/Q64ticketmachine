@@ -14,4 +14,5 @@ Purpose of project: To illustrate conditional statements.
 How to start this project: Create one or more TicketMachine objects.
 Test
 
+Answer part:
 
