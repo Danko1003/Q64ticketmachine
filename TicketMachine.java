@@ -35,6 +35,9 @@ public class TicketMachine
     {
         return price;
     }
+    public void setPrice(int cost){
+        price = cost;
+    }
 
     /**
      * Return The amount of money already inserted for the next ticket.
