@@ -9,7 +9,18 @@
  * @author David J. Barnes and Michael Kölling
  * @version 7.1
  */
-public class TicketMachine
+/**Look at the class definition in
+source code and use this knowledge, along with the additional information about ordering we have given
+you, to make a list of the names of the fields, constructors, and methods in the TicketMachine class.
+Hint: There is only one constructor in the class.
+ * Class,functions,variables,
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+class TicketMachine
 {
     // The price of a ticket from this machine.
     private int price;
@@ -31,15 +42,15 @@ public class TicketMachine
     /**
      * @Return The price of a ticket.
      */
-    public int getPrice()
-    {
-        return price;
-    }
+
     public void setPrice(int price){
         /** set your price */
         this.price = price;
     }
-
+    public int getPrice()
+    {
+        return price;
+    }
     /**
      * Return The amount of money already inserted for the next ticket.
      */
@@ -47,7 +58,9 @@ public class TicketMachine
     {
         return balance;
     }
-
+    public int gettotal(){
+        return total;
+    }
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
