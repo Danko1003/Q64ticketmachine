@@ -56,17 +56,37 @@ public class Date{
 25 You do not need to change the name of the return because in this situation, you did not change the name of the variable, only the name of the function was changed.
 26 The total of money the machine has accumulated from selling tickets.
 27 will not consider the line of code as a code statement. (not a statement)
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
+28 one returns a value the other simply activates a println function without returning a Type.
+29 They do not have return statements because they are made to activate certain functions and not to return a type.
+30 first call will show 0,the second call will show the amount of money inserted into the machine.
+31 
+{
+    score += points;
+}
+32 yes, it is a mutator cause it modifies the value of a variable.
+
+33 
+{
+    price -= amount;
+    
+}
+34 public int age;
+{
+    public void age(int currentAge){
+       age = currentage;
+       
+    }
+    
+}
+35 private boolean alive;
+{
+    public void setLivingStatus(boolean isalive){
+        alive = isalive;
+    }
+}
+36 The total price will be set to 0 cause the price was 0 before so it sets it's price to it's price which was 0.
+37 My cat has green eyes.
+38 
 39
 40
 41

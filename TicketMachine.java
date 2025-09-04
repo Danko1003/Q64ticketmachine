@@ -51,6 +51,10 @@ class TicketMachine
     {
         return price;
     }
+    public void prompt() 
+    {
+        System.out.println("Please insert the correct amount of money");  
+    }
     /**
      * Return The amount of money already inserted for the next ticket.
      */
@@ -67,6 +71,7 @@ class TicketMachine
      */
     public void insertMoney(int amount)
     {
+        prompt();
         if(amount > 0) {
             balance = balance + amount;
         }
