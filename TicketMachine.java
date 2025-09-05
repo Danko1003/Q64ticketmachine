@@ -32,9 +32,9 @@ class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        price = 1000;
         balance = 0;
         total = 0;
     }
@@ -96,6 +96,7 @@ class TicketMachine
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();
+            //System.out.printf("# %d cents.%on", price);
 
             // Update the total collected with the price.
             total = total + price;

@@ -86,18 +86,18 @@ public class Date{
 }
 36 The total price will be set to 0 cause the price was 0 before so it sets it's price to it's price which was 0.
 37 My cat has green eyes.
-38 
-39
+38 x
+39 
 40
 41
 42
-43
-44
-45
-46
-47
-48
-49
+43 The printf is made to print out specific formats and the %d is to set int and %n is to skip line allow to set the format type
+44 It does not ask for cost to be set. The price is set to 1000 cents
+45 Two constructors: one takes price, one no-arg sets default price. 
+46 empty() sets total = 0. No parameters. Mutator.
+47 Balance changes only if amount > 0. Zero/negative → no change.
+48 With >= 0, zero is accepted (no error, no balance change).
+49 Use if(amount <= 0) for error, else add to balance. Same result.
 50
 51
 52
