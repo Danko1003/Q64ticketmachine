@@ -13,8 +13,8 @@ It is discussed in chapter 2.
 Purpose of project: To illustrate conditional statements.
 How to start this project: Create one or more TicketMachine objects.
 Test
-
-Answer part:
+ 
+Answer part: ( IMPORTANT: X means done in sourcecode)
 1 x
 2 Money inserted - Ticket price
 3 The Money inseted - Ticket price is the refund value
@@ -98,19 +98,19 @@ public class Date{
 47 Balance changes only if amount > 0. Zero/negative → no change.
 48 With >= 0, zero is accepted (no error, no balance change).
 49 Use if(amount <= 0) for error, else add to balance. Same result.
-50
-51
-52
-53
+50 Boolean controlled if circle was filled. Good use of boolean.
+51 Better machine: total updated with ticket price, balance reduced. Naive: total += balance, balance reset to 0.
+52 Removing else: compiles, but ticket prints even without enough money.
+53 Balance can’t go negative → check ensures balance ≥ price.
 54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
+55 saving = price * discount;
+56 mean = total / count;
+57 x 
+58 x
+59 Wrong refund sets balance = 0 before return → always 0.
+60 Doesn’t compile: code after return is unreachable.
+61 Constructor error: local price hides field → field stays 0. Fix with this.price = cost;.
+62 x
+63 x
+64..(to be done in another file)
 

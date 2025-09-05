@@ -28,7 +28,8 @@ class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-
+    
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -86,28 +87,29 @@ class TicketMachine
      * an error message if more money is required.
      */
     public void printTicket(int ticketamount)
-    {   for (int i = 0; i < ticketamount; i++) {
-        if(balance >= price) {
-            
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
-            System.out.println("##################");
-            System.out.println();
-            //System.out.printf("# %d cents.%on", price);
-
-            // Update the total collected with the price.
-            total = total + price;
-            // Reduce the balance by the price.
-            balance = balance - price;
+    {   
+        for (int i = 0; i < ticketamount; i++) {
+            int amountLeftToPay = price - balance;  // new local variable
+    
+            if(amountLeftToPay <= 0) {
+                // Simulate the printing of a ticket
+                System.out.println("##################");
+                System.out.println("# The BlueJ Line");
+                System.out.println("# Ticket");
+                System.out.println("# " + price + " cents.");
+                System.out.println("##################");
+                System.out.println();
+    
+                // Update the total collected with the price
+                total = total + price;
+                // Reduce the balance by the price
+                balance = balance - price;
+            }
+            else {
+                System.out.printf("You must insert at least %d more cents.%n",
+                                  amountLeftToPay);
+            }
         }
-        else {
-            System.out.printf("You must insert at least %d more cents.%n",
-                              price - balance);
-        }
-    }
     }
 
     /**
@@ -121,4 +123,19 @@ class TicketMachine
         balance = 0;
         return amountToRefund;
     }
+    
+    public void affordable(int budget) {
+        if(price > budget) {
+            System.out.println("Too expensive. Budget: " + budget );
+        } else {
+            System.out.println("Just right");
+        }
+    }
+    public int  emptyMachine() {
+        int memorytotal = total;
+        total = 0;
+        return memorytotal;
+        
+    }
+    
 }
