@@ -28,7 +28,8 @@ class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-    
+    // New field to track if discount is selected
+    private boolean discountSelected;
     
     /**
      * Create a machine that issues tickets of the given price.
@@ -38,24 +39,27 @@ class TicketMachine
         price = 1000;
         balance = 0;
         total = 0;
+        discountSelected = false;  // discount is off by default
     }
 
     /**
      * @Return The price of a ticket.
      */
-
     public void setPrice(int price){
         /** set your price */
         this.price = price;
     }
+
     public int getPrice()
     {
         return price;
     }
+
     public void prompt() 
     {
         System.out.println("Please insert the correct amount of money");  
     }
+
     /**
      * Return The amount of money already inserted for the next ticket.
      */
@@ -63,9 +67,11 @@ class TicketMachine
     {
         return balance;
     }
+
     public int gettotal(){
         return total;
     }
+
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
@@ -82,6 +88,13 @@ class TicketMachine
     }
 
     /**
+     * Allow user to select discount.
+     */
+    public void selectDiscount() {
+        discountSelected = true;
+    }
+
+    /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
@@ -89,21 +102,24 @@ class TicketMachine
     public void printTicket(int ticketamount)
     {   
         for (int i = 0; i < ticketamount; i++) {
-            int amountLeftToPay = price - balance;  // new local variable
+            int currentPrice = discountSelected ? price / 2 : price; // use discount if chosen
+            int amountLeftToPay = currentPrice - balance;  // local variable
     
             if(amountLeftToPay <= 0) {
                 // Simulate the printing of a ticket
                 System.out.println("##################");
                 System.out.println("# The BlueJ Line");
                 System.out.println("# Ticket");
-                System.out.println("# " + price + " cents.");
+                System.out.println("# " + currentPrice + " cents.");
                 System.out.println("##################");
                 System.out.println();
     
                 // Update the total collected with the price
-                total = total + price;
+                total = total + currentPrice;
                 // Reduce the balance by the price
-                balance = balance - price;
+                balance = balance - currentPrice;
+                // Reset discount for next ticket
+                discountSelected = false;
             }
             else {
                 System.out.printf("You must insert at least %d more cents.%n",
@@ -131,11 +147,10 @@ class TicketMachine
             System.out.println("Just right");
         }
     }
-    public int  emptyMachine() {
+
+    public int emptyMachine() {
         int memorytotal = total;
         total = 0;
         return memorytotal;
-        
     }
-    
 }
